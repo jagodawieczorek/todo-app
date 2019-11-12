@@ -5,5 +5,5 @@ import java.util.List;
 public interface TaskService {
     List<Task> getAll();
 
-    TaskCommand save(TaskCommand task);
+    Task save(Task task);
 }

@@ -7,7 +7,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Slf4j
-public class TaskServiceImpl implements TaskService{
+public class TaskServiceImpl implements TaskService {
     private final TaskRepository taskRepository;
 
     @Override
@@ -16,8 +16,10 @@ public class TaskServiceImpl implements TaskService{
     }
 
     @Override
-    public TaskCommand save(TaskCommand task) {
-        // TODO implement saving (needed to add a converter)
-        return null;
+    public Task save(Task task) {
+        Task savedTask = taskRepository.save(task);
+        log.debug("Saved task:" + savedTask.getId());
+
+        return savedTask;
     }
 }

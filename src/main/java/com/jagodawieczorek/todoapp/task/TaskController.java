@@ -23,13 +23,15 @@ public class TaskController {
 
     @RequestMapping({"/tasks/create"})
     public String create(Model model) {
-        model.addAttribute("task", new TaskCommand());
+        model.addAttribute("task", new Task());
 
         return "tasks/form";
     }
 
     @PostMapping("task")
-    public String save(@ModelAttribute TaskCommand command) {
+    public String save(@ModelAttribute Task task) {
+        Task savedTask = taskService.save(task);
+        // TODO add validation
         // TODO implement saving
         return "redirect:/tasks";
     }
