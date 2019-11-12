@@ -13,7 +13,7 @@
 <div th:replace="fragments/header :: header">
 </div>
 <main role="main" class="flex-shrink-0" id="content">
-    <h1 th:text="'Task #' + ${task.id}">Task #123</h1>
+    <h1 th:text="#{task} + '#' + ${task.id}">Task #123</h1>
     <div class="container">
         <div class="row">
             <div class="col-md-3">
@@ -25,7 +25,7 @@
         </div>
         <div class="row">
             <div class="col-md-3">
-                <h5>Name</h5>
+                <h5 th:text="#{tasks.name.label}">Name</h5>
             </div>
             <div class="col-md-9">
                 <p th:text="${task.name}">Test</p>
@@ -33,7 +33,7 @@
         </div>
         <div class="row">
             <div class="col-md-3">
-                <h5>Description</h5>
+                <h5 th:text="#{tasks.description}">Description</h5>
             </div>
             <div class="col-md-9">
                 <p th:text="${task.description}">Test</p>

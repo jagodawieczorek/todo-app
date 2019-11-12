@@ -15,8 +15,8 @@
 <main role="main" class="flex-shrink-0" id="content">
     <div class="container">
         <div class="starter-template">
-            <h1>Ooups! Something went wrong!</h1>
-            <a href="/">Go home</a>
+            <h1 th:text="#{errormessage.default.message}">Ooups! Something went wrong!</h1>
+            <a th:text="#{navigation.gohome}" href="/">Go home</a>
         </div>
     </div>
 </main>

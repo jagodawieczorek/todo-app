@@ -15,11 +15,11 @@
 <main role="main" class="flex-shrink-0">
     <div class="container">
         <div class="starter-template">
-            <h1>Create your own TODO list!</h1>
-            <p>Use this application to build your own TODO list and reach your goals every day!</p>
-            <a class="btn btn-primary" role="button" th:href="@{/tasks}">List of tasks</a>
-            <a class="btn btn-primary" role="button" th:href="@{/tasks/create}">Create a new task</a>
-            <a class="btn btn-primary" role="button" th:href="@{/contacts}">Contact</a>
+            <h1 th:text="#{greeting}">Create your own TODO list!</h1>
+            <p th:text="#{greeting.usage}">Use this application to build your own TODO list and reach your goals every day!</p>
+            <a th:text="#{tasks.list.name}" class="btn btn-primary" role="button" th:href="@{/tasks}">List of tasks</a>
+            <a th:text="#{tasks.list.new}" class="btn btn-primary" role="button" th:href="@{/tasks/create}">Create a new task</a>
+            <a th:text="#{contact}" class="btn btn-primary" role="button" th:href="@{/contacts}">Contact</a>
         </div>
     </div>
 </main>

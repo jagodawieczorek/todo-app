@@ -16,20 +16,20 @@
     <div class="container">
         <form th:object="${task}" th:action="@{/task/}" method="post">
             <input type="hidden" th:field="*{id}"/>
-            <h1>New task</h1>
+            <h1 th:text="#{tasks.list.new}">Create a new task</h1>
 
             <div class="form-group">
-                <label for="name">Name:</label>
+                <label th:text="#{tasks.name.label}" for="name">Name:</label>
                 <input type="text" id="name" class="form-control" th:field="*{name}"
-                       placeholder="Enter name"/>
+                       placeholder="Enter name" th:placeholder="#{tasks.name.placeholder}"/>
             </div>
 
             <div class="form-group">
-                <label for="description">Description:</label>
-                <textarea id="description" rows="3" class="form-control" th:field="*{description}"
+                <label th:text="#{tasks.description}" for="description">Description:</label>
+                <textarea th:placeholder="#{tasks.description.placeholder}" id="description" rows="3" class="form-control" th:field="*{description}"
                           placeholder="Enter description"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button th:text="#{save}" type="submit" class="btn btn-primary">Save</button>
         </form>
     </div>
 </main>

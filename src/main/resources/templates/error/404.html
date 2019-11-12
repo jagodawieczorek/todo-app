@@ -15,9 +15,9 @@
 <main role="main" class="flex-shrink-0" id="content">
     <div class="container">
         <div class="starter-template">
-            <h1>404 not found</h1>
-            <p>We could not find the resource you are looking for.</p>
-            <a href="/">Go home</a>
+            <h1 th:text="#{errormessage.notfound.message}">404 not found</h1>
+            <p th:text="#{errormessage.notfound.description}">We could not find the resource you are looking for.</p>
+            <a th:text="#{navigation.gohome}" href="/">Go home</a>
         </div>
     </div>
 </main>
