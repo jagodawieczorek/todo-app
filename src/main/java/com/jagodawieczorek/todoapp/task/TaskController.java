@@ -4,9 +4,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @Slf4j
 @Controller
@@ -28,11 +28,17 @@ public class TaskController {
         return "tasks/form";
     }
 
-    @PostMapping("task")
+    @PostMapping("/task")
     public String save(@ModelAttribute Task task) {
         Task savedTask = taskService.save(task);
         // TODO add validation
-        // TODO implement saving
-        return "redirect:/tasks";
+        return "redirect:/tasks/" + savedTask.getId();
+    }
+
+    @GetMapping("/tasks/{id}")
+    public String show(@PathVariable String id, Model model) {
+        model.addAttribute("task", taskService.findById(id));
+
+        return "tasks/show";
     }
 }

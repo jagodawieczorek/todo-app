@@ -6,4 +6,6 @@ public interface TaskService {
     List<Task> getAll();
 
     Task save(Task task);
+
+    Task findById(String id);
 }
