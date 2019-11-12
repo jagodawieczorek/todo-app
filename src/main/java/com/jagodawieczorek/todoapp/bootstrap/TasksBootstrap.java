@@ -11,6 +11,7 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Slf4j
@@ -31,7 +32,7 @@ public class TasksBootstrap implements ApplicationListener<ContextRefreshedEvent
         List<Task> tasks = new ArrayList<>(tasksCount);
 
         for (int i = 1; i <= tasksCount; i++) {
-            tasks.add(new Task(Integer.toString(i), "Test name", "Test description", categories.get(2)));
+            tasks.add(new Task(Integer.toString(i), "Test name", "Test description", categories.get(2), null, new Date(System.currentTimeMillis())));
         }
 
         taskRepository.saveAll(tasks);
