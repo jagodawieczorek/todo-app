@@ -7,19 +7,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"
           th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body class="d-flex flex-column h-100">
 <div th:replace="fragments/header :: header">
 </div>
-<main role="main" class="flex-shrink-0">
+<main role="main" class="flex-shrink-0" id="content">
     <div class="container">
         <div class="starter-template">
-            <h1>Create your own TODO list!</h1>
-            <p>Use this application to build your own TODO list and reach your goals every day!</p>
-            <a class="btn btn-primary" role="button" th:href="@{/tasks}">List of tasks</a>
-            <a class="btn btn-primary" role="button" th:href="@{/tasks/create}">Create a new task</a>
-            <a class="btn btn-primary" role="button" th:href="@{/contacts}">Contact</a>
+            <h1>Ooups! Something went wrong!</h1>
+            <a href="/">Go home</a>
         </div>
     </div>
 </main>

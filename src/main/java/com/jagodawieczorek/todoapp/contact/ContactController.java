@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Slf4j
 @RequiredArgsConstructor
 @Controller
+@RequestMapping("/contacts")
 public class ContactController {
 
-    @RequestMapping("/contact")
+    @RequestMapping({"", "/"})
     public String getPage(Model model)
     {
         return "contact";
