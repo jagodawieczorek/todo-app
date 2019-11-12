@@ -39,6 +39,14 @@
                 <p th:text="${task.description}">Test</p>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-3">
+                <h5 th:text="#{category}">Category</h5>
+            </div>
+            <div class="col-md-9">
+                <p th:text="${task.category.name}">Test</p>
+            </div>
+        </div>
     </div>
 </main>
 <div th:replace="fragments/footer :: footer">

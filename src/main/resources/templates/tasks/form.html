@@ -29,6 +29,14 @@
                 <textarea th:placeholder="#{tasks.description.placeholder}" id="description" rows="3" class="form-control" th:field="*{description}"
                           placeholder="Enter description"></textarea>
             </div>
+
+            <div class="form-group">
+                <label th:text="#{category}" for="category">Category:</label>
+                <select id="category" class="form-control" th:field="*{category}">
+                    <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}">Test</option>
+                </select>
+            </div>
+
             <button th:text="#{save}" type="submit" class="btn btn-primary">Save</button>
         </form>
     </div>

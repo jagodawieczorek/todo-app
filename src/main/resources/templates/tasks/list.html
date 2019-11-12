@@ -27,6 +27,7 @@
                     <th>ID</th>
                     <th th:text="#{tasks.name.label}">Name</th>
                     <th th:text="#{tasks.description}">Description</th>
+                    <th th:text="#{category}">Category</th>
                 </tr>
                 </thead>
                 <tr th:remove="all">
@@ -40,6 +41,7 @@
                         Praesent elementum est et sem pellentesque convallis.
                         Nulla blandit erat quis tincidunt fringilla.
                     </td>
+                    <td>Test</td>
                 </tr>
                 <tr th:each="task : ${tasks}">
                     <td>
@@ -47,6 +49,7 @@
                     </td>
                     <td th:text="${task.name}">Example name</td>
                     <td th:text="${task.description}">Example description</td>
+                    <td th:text="${task.category.name}">Example category</td>
                 </tr>
             </table>
         </div>

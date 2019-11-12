@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TODO App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"
+          th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body class="d-flex flex-column h-100">
+<div th:replace="fragments/header :: header">
+</div>
+<main role="main" class="flex-shrink-0" id="content">
+    <div class="container">
+        <div class="starter-template">
+            <h1 th:text="#{errormessage.forbidden.message}">403 forbidden</h1>
+            <p th:text="#{errormessage.forbidden.description}">You don't have access here.</p>
+            <a th:text="#{navigation.gohome}" href="/">Go home</a>
+        </div>
+    </div>
+</main>
+<div th:replace="fragments/footer :: footer">
+</div>
+<div th:replace="fragments/footer :: js-scripts">
+</div>
+</body>
+</html>

@@ -1,5 +1,6 @@
 package com.jagodawieczorek.todoapp.task;
 
+import com.jagodawieczorek.todoapp.category.CategoryService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class TaskController {
     private final TaskService taskService;
+    private final CategoryService categoryService;
 
     @RequestMapping({"/tasks", "/tasks/", "/tasks/list", "/tasks/list/"})
     public String getList(Model model) {
@@ -24,6 +26,7 @@ public class TaskController {
     @RequestMapping({"/tasks/create"})
     public String create(Model model) {
         model.addAttribute("task", new Task());
+        model.addAttribute("categories", categoryService.getAll());
 
         return "tasks/form";
     }

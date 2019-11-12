@@ -1,6 +1,5 @@
-package com.jagodawieczorek.todoapp.task;
+package com.jagodawieczorek.todoapp.category;
 
-import com.jagodawieczorek.todoapp.category.Category;
 import lombok.*;
 
 import javax.persistence.*;
@@ -11,13 +10,10 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PACKAGE)
 @Entity
-@Table(name = "tasks")
-public class Task {
+@Table(name = "categories")
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String name;
-    private String description;
-    @ManyToOne
-    private Category category;
 }
