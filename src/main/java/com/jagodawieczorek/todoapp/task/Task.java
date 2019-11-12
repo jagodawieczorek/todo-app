@@ -4,6 +4,7 @@ import com.jagodawieczorek.todoapp.category.Category;
 import lombok.*;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.hateoas.RepresentationModel;
 import org.springframework.security.core.userdetails.User;
 
 import javax.persistence.*;
@@ -16,7 +17,7 @@ import java.util.Date;
 @NoArgsConstructor(access = AccessLevel.PACKAGE)
 @Entity
 @Table(name = "tasks")
-public class Task {
+public class Task extends RepresentationModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
