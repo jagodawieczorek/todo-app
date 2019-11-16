@@ -1,20 +1,24 @@
 package com.jagodawieczorek.todoapp.category;
 
+import com.jagodawieczorek.todoapp.task.Task;
 import lombok.*;
 import org.springframework.hateoas.RepresentationModel;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @EqualsAndHashCode
 @ToString
+@RequiredArgsConstructor
 @AllArgsConstructor
-@NoArgsConstructor(access = AccessLevel.PACKAGE)
+@NoArgsConstructor(access = AccessLevel.PROTECTED, force = true)
 @Entity
-@Table(name = "categories")
 public class Category extends RepresentationModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
-    private String name;
+    private final String id;
+    private final String name;
+    @OneToMany(mappedBy = "category")
+    private Set<Task> tasks;
 }

@@ -28,7 +28,6 @@
                     <th th:text="#{tasks.name.label}">Name</th>
                     <th th:text="#{tasks.description}">Description</th>
                     <th th:text="#{category}">Category</th>
-                    <th th:text="#{tasks.createdBy}">Created by</th>
                     <th th:text="#{tasks.createdAt}">Created at</th>
                 </tr>
                 </thead>
@@ -44,6 +43,7 @@
                         Nulla blandit erat quis tincidunt fringilla.
                     </td>
                     <td>Test</td>
+                    <td>2019-11-16 14:20</td>
                 </tr>
                 <tr th:each="task : ${tasks}">
                     <td>
@@ -51,8 +51,7 @@
                     </td>
                     <td th:text="${task.name}">Example name</td>
                     <td th:text="${task.description}">Example description</td>
-                    <td th:text="${task.category.name}">Example category</td>
-                    <td th:text="${task.user}">User</td>
+                    <td th:text="${task.getCategory().getName()}">Example category</td>
                     <td th:text="${task.createdDate}">Created date</td>
                 </tr>
             </table>
