@@ -11,7 +11,6 @@ import org.springframework.hateoas.RepresentationModel;
 import org.springframework.security.core.userdetails.User;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Getter
@@ -30,6 +29,8 @@ public class Task extends RepresentationModel {
     @ManyToOne
     @JoinColumn(name="category_id")
     private Category category;
+    @Enumerated(value = EnumType.STRING)
+    private Status status;
     @CreatedBy
     private User createdBy;
     @CreatedDate

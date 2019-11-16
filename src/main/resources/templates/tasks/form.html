@@ -37,6 +37,13 @@
                 </select>
             </div>
 
+            <div class="form-group">
+                <label th:text="#{status}" for="status">Status:</label>
+                <select id="status" class="form-control" th:field="*{status}">
+                    <option th:each="status : ${statuses}" th:value="${status}" th:text="${status}">Test</option>
+                </select>
+            </div>
+
             <button th:text="#{save}" type="submit" class="btn btn-primary">Save</button>
         </form>
     </div>

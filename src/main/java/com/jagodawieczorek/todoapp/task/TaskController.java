@@ -27,6 +27,7 @@ public class TaskController {
     public String create(Model model) {
         model.addAttribute("task", new Task());
         model.addAttribute("categories", categoryService.getAll());
+        model.addAttribute("statuses", Status.values());
 
         return "tasks/form";
     }

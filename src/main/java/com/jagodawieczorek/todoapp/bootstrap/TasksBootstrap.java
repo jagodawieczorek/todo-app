@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static com.jagodawieczorek.todoapp.task.Status.READY;
+
 @Slf4j
 @Component
 @RequiredArgsConstructor
@@ -32,7 +34,7 @@ public class TasksBootstrap implements ApplicationListener<ContextRefreshedEvent
         List<Task> tasks = new ArrayList<>(tasksCount);
 
         for (int i = 1; i <= tasksCount; i++) {
-            tasks.add(new Task(Integer.toString(i), "Test name", "Test description", categories.get(2), null, new Date(System.currentTimeMillis()), null, new Date(System.currentTimeMillis())));
+            tasks.add(new Task(Integer.toString(i), "Test name", "Test description", categories.get(2), READY,null, new Date(System.currentTimeMillis()), null, new Date(System.currentTimeMillis())));
         }
 
         taskRepository.saveAll(tasks);
