@@ -1,5 +1,6 @@
 package com.jagodawieczorek.todoapp.category;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jagodawieczorek.todoapp.task.Task;
 import lombok.*;
 import org.springframework.hateoas.RepresentationModel;
@@ -19,6 +20,7 @@ public class Category extends RepresentationModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private final String id;
     private final String name;
+    @JsonIgnore
     @OneToMany(mappedBy = "category")
     private Set<Task> tasks;
 }
