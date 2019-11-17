@@ -8,4 +8,6 @@ public interface TaskService {
     Task save(Task task);
 
     Task findById(String id);
+
+    void deleteById(String id);
 }

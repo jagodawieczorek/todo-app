@@ -28,7 +28,10 @@
                     <th th:text="#{tasks.name.label}">Name</th>
                     <th th:text="#{tasks.description}">Description</th>
                     <th th:text="#{category}">Category</th>
+                    <th th:text="#{status}">Status</th>
                     <th th:text="#{tasks.createdAt}">Created at</th>
+                    <th th:text="#{tasks.lastModifiedAt}">Last modified at</th>
+                    <th th:text="#{options}">Options</th>
                 </tr>
                 </thead>
                 <tr th:remove="all">
@@ -51,8 +54,14 @@
                     </td>
                     <td th:text="${task.name}">Example name</td>
                     <td th:text="${task.description}">Example description</td>
-                    <td th:text="${task.getCategory().getName()}">Example category</td>
+                    <td th:text="${task.category.name}">Example category</td>
+                    <td th:text="${task.status}">Example status</td>
                     <td th:text="${task.createdDate}">Created date</td>
+                    <td th:text="${task.lastModifiedDate}">Last modified date</td>
+                    <td>
+                        <a href="#" th:href="@{'/tasks/edit/' + ${task.id}}" th:text="#{edit}">Edit</a>
+                        <a href="#" th:href="@{'/tasks/delete/' + ${task.id}}" th:text="#{delete}">Delete</a>
+                    </td>
                 </tr>
             </table>
         </div>

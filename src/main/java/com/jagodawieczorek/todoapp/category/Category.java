@@ -9,8 +9,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Getter
-@EqualsAndHashCode
-@ToString
+@EqualsAndHashCode(callSuper = false)
 @RequiredArgsConstructor
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED, force = true)
@@ -23,4 +22,8 @@ public class Category extends RepresentationModel {
     @JsonIgnore
     @OneToMany(mappedBy = "category")
     private Set<Task> tasks;
+
+    public String toString() {
+        return "Category(id=" + this.getId() + ", name=" + this.getName() + ")";
+    }
 }

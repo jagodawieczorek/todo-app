@@ -44,7 +44,31 @@
                 <h5 th:text="#{category}">Category</h5>
             </div>
             <div class="col-md-9">
-                <p th:text="${task.getCategory().getName()}">Test</p>
+                <p th:text="${task.category.name}">Test</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <h5 th:text="#{status}">Status</h5>
+            </div>
+            <div class="col-md-9">
+                <p th:text="${task.status}">Test</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <h5 th:text="#{tasks.createdAt}">Created at</h5>
+            </div>
+            <div class="col-md-9">
+                <p th:text="${task.createdDate}">2019-11-17 16:00:00</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <h5 th:text="#{tasks.lastModifiedAt}">Last modified at</h5>
+            </div>
+            <div class="col-md-9">
+                <p th:text="${task.lastModifiedDate}">2019-11-17 16:00:00</p>
             </div>
         </div>
     </div>
